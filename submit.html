@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit your recipe to FlavourFolder — Share your delicious culinary creations with our growing community.">
+  <title>Submit a Recipe — FlavourFolder</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🍴 FlavourFolder</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#recipes-section">Browse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="submit.html">Submit</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search" onsubmit="return false;">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search recipes..." aria-label="Search">
+            <button class="btn btn-outline-secondary" type="button">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       PAGE HEADER
+       ============================================ -->
+  <section class="submit-header">
+    <div class="container">
+      <h1 class="fade-in">Submit Your Recipe</h1>
+      <p class="fade-in fade-in-delay-1">We'd love to hear your delicious recipes! Please fill out the form below.</p>
+      <a href="index.html" class="btn btn-dark-custom fade-in fade-in-delay-2">
+        <i class="bi bi-arrow-left me-1"></i>Home
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       RECIPE SUBMISSION FORM
+       ============================================ -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="submit-form-section animate-on-scroll">
+            <h3><i class="bi bi-pencil-square me-2" style="color: var(--color-primary);"></i>Recipe Details</h3>
+            
+            <form id="recipe-submit-form" novalidate>
+              <!-- Recipe Title -->
+              <div class="mb-4">
+                <label for="recipe-title" class="form-label">Recipe Title</label>
+                <input type="text" class="form-control" id="recipe-title" placeholder="Enter your recipe title here" required>
+                <small class="form-text">Give your recipe a catchy and descriptive name.</small>
+                <div class="invalid-feedback">Please enter a recipe title.</div>
+                <div class="valid-feedback">Looks great!</div>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-4">
+                <label for="recipe-email" class="form-label">Your Email</label>
+                <input type="email" class="form-control" id="recipe-email" placeholder="youremail@example.com" required>
+                <small class="form-text">We'll use this to contact you about your submission.</small>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+                <div class="valid-feedback">Valid email!</div>
+              </div>
+
+              <!-- Category Selection -->
+              <div class="mb-4">
+                <label class="form-label">Category Selection</label>
+                <div class="category-btn-group d-flex flex-wrap">
+                  <button type="button" class="btn category-btn" data-category="Appetizer">
+                    <i class="bi bi-egg-fried me-1"></i>Appetizer
+                  </button>
+                  <button type="button" class="btn category-btn" data-category="Main Course">
+                    <i class="bi bi-cup-hot me-1"></i>Main Course
+                  </button>
+                  <button type="button" class="btn category-btn" data-category="Dessert">
+                    <i class="bi bi-cake2 me-1"></i>Dessert
+                  </button>
+                  <button type="button" class="btn category-btn" data-category="Soup">
+                    <i class="bi bi-droplet me-1"></i>Soup
+                  </button>
+                </div>
+                <small class="form-text">Select a category for your recipe.</small>
+                <div class="category-error" id="category-error">Please select a category.</div>
+              </div>
+
+              <!-- Ingredients & Steps -->
+              <div class="mb-4">
+                <label for="recipe-ingredients" class="form-label">Ingredients & Steps</label>
+                <textarea class="form-control" id="recipe-ingredients" rows="6" placeholder="List your ingredients and steps here... Be as detailed as possible" required></textarea>
+                <small class="form-text">Include all necessary details for your recipe.</small>
+                <div class="invalid-feedback">Please list your ingredients and steps.</div>
+                <div class="valid-feedback">Great detail!</div>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="button" id="submit-recipe-btn" class="btn btn-dark-custom btn-lg w-100">
+                <i class="bi bi-send me-2"></i>Submit Recipe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SUCCESS MODAL
+       ============================================ -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="successModalLabel">
+            <i class="bi bi-check-circle me-2"></i>Recipe Submitted Successfully!
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <span class="success-icon">🎉</span>
+          <h4 style="font-family: var(--font-heading); margin-bottom: 12px;">Thank You!</h4>
+          <p style="color: var(--color-text-light); font-size: 1.05rem;">
+            Thank you for contributing your recipe to FlavourFolder. Our team will review it shortly.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-custom" id="submit-another-btn">
+            <i class="bi bi-plus-circle me-1"></i>Submit Another
+          </button>
+          <a href="index.html" class="btn btn-primary-custom">
+            <i class="bi bi-house me-1"></i>Back to Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="bg-dark text-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>🍴 FlavourFolder</h5>
+          <p>Your go-to digital recipe book. Discover, cook, and share your favourite recipes with our growing community of food lovers.</p>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html"><i class="bi bi-chevron-right me-1"></i>Home</a></li>
+            <li><a href="index.html#recipes-section"><i class="bi bi-chevron-right me-1"></i>Browse</a></li>
+            <li><a href="submit.html"><i class="bi bi-chevron-right me-1"></i>Submit</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <h5>Stay Connected</h5>
+          <p>© 2025 FlavourFolder</p>
+          <p style="font-size: 0.85rem;">Made with ❤️ for food lovers everywhere.</p>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <a href="#" class="me-3">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Spaghetti Carbonara — A classic Italian pasta recipe. Step-by-step instructions on FlavourFolder.">
+  <title>Spaghetti Carbonara — FlavourFolder</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🍴 FlavourFolder</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html#recipes-section">Browse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="submit.html">Submit</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search" onsubmit="return false;">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search recipes..." aria-label="Search">
+            <button class="btn btn-outline-secondary" type="button">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       RECIPE HEADER
+       ============================================ -->
+  <section class="recipe-header">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-2">
+        <ol class="breadcrumb justify-content-center" style="font-size: 0.9rem;">
+          <li class="breadcrumb-item"><a href="index.html" style="color: var(--color-primary);">Home</a></li>
+          <li class="breadcrumb-item"><a href="index.html#recipes-section" style="color: var(--color-primary);">Recipes</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Spaghetti Carbonara</li>
+        </ol>
+      </nav>
+      <h1 class="fade-in">Recipe Details</h1>
+      <p class="fade-in fade-in-delay-1">Discover how to make this delicious meal!</p>
+      <span class="badge bg-dark rounded-pill px-3 py-2 fade-in fade-in-delay-2" style="font-size: 0.85rem;">
+        <i class="bi bi-tag me-1"></i>Main Course
+      </span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SPLIT LAYOUT — Image + Info
+       ============================================ -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-5 animate-on-scroll">
+          <div class="recipe-detail-img">
+            <img src="images/spaghetti_carbonara.png" alt="Spaghetti Carbonara" class="rounded">
+          </div>
+        </div>
+        <div class="col-md-7 animate-on-scroll">
+          <div class="recipe-info">
+            <h2>Spaghetti Carbonara</h2>
+            <p>A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper. This authentic Roman recipe creates a luxuriously creamy sauce without any cream — just the magic of eggs and Parmesan. Perfect for a weeknight dinner that feels indulgent and satisfying.</p>
+            
+            <div class="d-flex flex-wrap gap-3 mt-3">
+              <div class="d-flex align-items-center gap-2 px-3 py-2 rounded-pill" style="background: var(--color-bg-warm);">
+                <i class="bi bi-clock" style="color: var(--color-primary);"></i>
+                <span style="font-weight: 600; font-size: 0.9rem;">30 min</span>
+              </div>
+              <div class="d-flex align-items-center gap-2 px-3 py-2 rounded-pill" style="background: var(--color-bg-warm);">
+                <i class="bi bi-people" style="color: var(--color-primary);"></i>
+                <span style="font-weight: 600; font-size: 0.9rem;">Serves 4</span>
+              </div>
+              <div class="d-flex align-items-center gap-2 px-3 py-2 rounded-pill" style="background: var(--color-bg-warm);">
+                <i class="bi bi-bar-chart" style="color: var(--color-primary);"></i>
+                <span style="font-weight: 600; font-size: 0.9rem;">Medium</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TABS — Ingredients vs Steps
+       ============================================ -->
+  <section class="py-4">
+    <div class="container">
+      <div class="recipe-tabs animate-on-scroll">
+        <ul class="nav nav-tabs mb-4">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" id="ingredients-tab">
+              <i class="bi bi-basket me-1"></i>Ingredients
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="steps-tab">
+              <i class="bi bi-list-ol me-1"></i>Cooking Steps
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ---- Ingredients Section ---- -->
+      <div id="ingredients-section" class="animate-on-scroll">
+        <div class="row">
+          <div class="col-lg-8">
+            <h3 style="font-family: var(--font-heading); font-weight: 700; margin-bottom: 20px;">
+              <i class="bi bi-basket2 me-2" style="color: var(--color-primary);"></i>Ingredients
+            </h3>
+            <ul class="list-unstyled">
+              <li class="ingredient-row">
+                <input class="form-check-input ingredient-checkbox" type="checkbox" id="ing-1">
+                <span class="ingredient-emoji">🧄</span>
+                <label class="ingredient-name" for="ing-1">Garlic</label>
+                <span class="ingredient-qty">2 cloves</span>
+              </li>
+              <li class="ingredient-row">
+                <input class="form-check-input ingredient-checkbox" type="checkbox" id="ing-2">
+                <span class="ingredient-emoji">🥓</span>
+                <label class="ingredient-name" for="ing-2">Pancetta</label>
+                <span class="ingredient-qty">150g</span>
+              </li>
+              <li class="ingredient-row">
+                <input class="form-check-input ingredient-checkbox" type="checkbox" id="ing-3">
+                <span class="ingredient-emoji">🍝</span>
+                <label class="ingredient-name" for="ing-3">Spaghetti</label>
+                <span class="ingredient-qty">400g</span>
+              </li>
+              <li class="ingredient-row">
+                <input class="form-check-input ingredient-checkbox" type="checkbox" id="ing-4">
+                <span class="ingredient-emoji">🥚</span>
+                <label class="ingredient-name" for="ing-4">Eggs</label>
+                <span class="ingredient-qty">4</span>
+              </li>
+              <li class="ingredient-row">
+                <input class="form-check-input ingredient-checkbox" type="checkbox" id="ing-5">
+                <span class="ingredient-emoji">🧀</span>
+                <label class="ingredient-name" for="ing-5">Parmesan Cheese</label>
+                <span class="ingredient-qty">100g</span>
+              </li>
+              <li class="ingredient-row">
+                <input class="form-check-input ingredient-checkbox" type="checkbox" id="ing-6">
+                <span class="ingredient-emoji">🧂</span>
+                <label class="ingredient-name" for="ing-6">Salt</label>
+                <span class="ingredient-qty">to taste</span>
+              </li>
+              <li class="ingredient-row">
+                <input class="form-check-input ingredient-checkbox" type="checkbox" id="ing-7">
+                <span class="ingredient-emoji">🌶️</span>
+                <label class="ingredient-name" for="ing-7">Pepper</label>
+                <span class="ingredient-qty">to taste</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- Steps Section (hidden by default) ---- -->
+      <div id="steps-section" style="display: none;" class="animate-on-scroll">
+        <h3 style="font-family: var(--font-heading); font-weight: 700; margin-bottom: 20px;">
+          <i class="bi bi-list-check me-2" style="color: var(--color-primary);"></i>Instructions
+        </h3>
+        <div class="row">
+          <div class="col-lg-8">
+            <!-- Step 1 -->
+            <div class="card step-card">
+              <div class="card-body d-flex align-items-start gap-3 p-3">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h6>Boil the Pasta</h6>
+                  <p>Boil pasta in a large pot of generously salted water until al dente. Reserve 1 cup of pasta water before draining.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="card step-card">
+              <div class="card-body d-flex align-items-start gap-3 p-3">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h6>Fry the Pancetta</h6>
+                  <p>Meanwhile, fry the pancetta in a large skillet over medium heat until crispy and golden. Remove from heat to cool slightly.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="card step-card">
+              <div class="card-body d-flex align-items-start gap-3 p-3">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h6>Combine Everything</h6>
+                  <p>Combine cooked pasta with pancetta. Quickly toss with the egg and cheese mixture, using reserved pasta water to achieve a creamy consistency.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="card step-card">
+              <div class="card-body d-flex align-items-start gap-3 p-3">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                  <h6>Serve & Enjoy</h6>
+                  <p>Serve hot with a generous amount of freshly grated Parmesan cheese and cracked black pepper. Buon appetito!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PERSONAL CHEF NOTES
+       ============================================ -->
+  <section class="py-5" style="background-color: var(--color-bg-warm);">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="chef-notes-section animate-on-scroll">
+            <h3>
+              <i class="bi bi-journal-text me-2" style="color: var(--color-primary);"></i>Personal Chef Notes
+            </h3>
+            <textarea id="chef-notes-textarea" class="form-control" rows="4" placeholder="Write your notes here... e.g. Add extra chili 🌶️"></textarea>
+            <small class="form-text text-muted d-block mt-1 mb-3">Add your cooking tips and tweaks for next time.</small>
+            <button id="save-notes-btn" class="btn btn-dark-custom w-100 w-md-auto">
+              <i class="bi bi-check2-circle me-1"></i>Save Notes
+            </button>
+            <div id="saved-notes-display" class="mt-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile spacer for bottom nav -->
+  <div class="mobile-spacer d-md-none"></div>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="bg-dark text-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>🍴 FlavourFolder</h5>
+          <p>Your go-to digital recipe book. Discover, cook, and share your favourite recipes with our growing community of food lovers.</p>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html"><i class="bi bi-chevron-right me-1"></i>Home</a></li>
+            <li><a href="index.html#recipes-section"><i class="bi bi-chevron-right me-1"></i>Browse</a></li>
+            <li><a href="submit.html"><i class="bi bi-chevron-right me-1"></i>Submit</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <h5>Stay Connected</h5>
+          <p>© 2025 FlavourFolder</p>
+          <p style="font-size: 0.85rem;">Made with ❤️ for food lovers everywhere.</p>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <a href="#" class="me-3">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       MOBILE BOTTOM NAV (visible < md)
+       ============================================ -->
+  <div class="mobile-bottom-nav fixed-bottom d-flex d-md-none justify-content-around align-items-center py-2">
+    <a href="index.html" class="text-center">
+      <span class="nav-icon">🏠</span>
+      <small class="d-block">Home</small>
+    </a>
+    <a href="index.html#recipes-section" class="text-center">
+      <span class="nav-icon">🔍</span>
+      <small class="d-block">Search</small>
+    </a>
+    <a href="#" class="text-center active">
+      <span class="nav-icon">⭐</span>
+      <small class="d-block">Favorites</small>
+    </a>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="main.js"></script>
+</body>
+</html>
